@@ -37,15 +37,13 @@ for line in taskFile:
     file.flush()
     file.close()
 
-
-    # Opening the text file in read mode to download the links
+    # Opening the temporary text file in read mode to download the links
     sourceFile = open('tempFile.txt', "r")
 
     for li in sourceFile:
-        # print(line)
         ref = li.rfind("/")+1
         filename = li[ref:ref+2]
         print(filename)
         doc = requests.get(li)
-        # with open(filename + ".mp3", 'wb') as f:
-        #     f.write(doc.content)
+        with open(path + "/" + filename + ".mp3", 'wb') as f:
+            f.write(doc.content)
