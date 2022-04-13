@@ -47,3 +47,6 @@ for line in taskFile:
         doc = requests.get(li)
         with open(path + "/" + filename + ".mp3", 'wb') as f:
             f.write(doc.content)
+        
+        f.flush()
+        f.close()
