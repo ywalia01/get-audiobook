@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
 import urllib.request
-import re
 import os
 
 taskFile = open('tasks.txt', "r")
